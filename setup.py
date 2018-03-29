@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 with open('./loremipsum/version.py') as f:
     exec(f.read())
 
-setup(name='loremipsum',
+setup(name='py-loremipsum',
       version=__version__,
       description='Python class for generating placeholder text using https://loripsum.net/ API',
       url='https://github.com/connordelacruz/python-loremipsum/',
