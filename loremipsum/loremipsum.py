@@ -17,9 +17,25 @@ class LoremIpsum(object):
 
     # TODO: make this method always be plaintext, add method for HTML with different params
     @staticmethod
-    def generate(paragraph_count=None, paragraph_length=None, plaintext=True):
-        # TODO: document
-        # TODO: add params for remaining API options
+    def generate(paragraph_count=None, paragraph_length=None, plaintext=True, allcaps=False, prude=False):
+        """Generate Lorem Ipsum placeholder text using the https://loremipsum.net API.
+
+        Further documentation of parameters can be found at `loremipsum.net <https://loremipsum.net>`_
+
+        :param paragraph_count: (Optional) The number of paragraphs to generate. If
+            unspecified, API defaults to 3
+        :param paragraph_length: (Optional) The average length of a paragraph. Possible
+            values are declared as attributes in ``LoremIpsum.ParagraphLength``. If
+            unspecified, API defaults to 'long'
+        :param plaintext: (Default = True) Return plain text, no HTML
+        :param allcaps: (Default = False) Use ALL CAPS
+        :param prude: (Default = False) Prude version. From the API documentation:
+            "The original text contains a few instances of words like 'sex' or 'homo'.
+            Personally, we don't mind, because these are just common latin words
+            meaning 'six' and 'man'. However, some people (or your clients) might be
+            offended by this, so if you select the 'Prude version', these words will be
+            censored."
+        """
         global URL
         request_url = URL
         if paragraph_count is not None:
@@ -28,7 +44,10 @@ class LoremIpsum(object):
             request_url += paragraph_length + '/'
         if plaintext:
             request_url += 'plaintext/'
-        placeholder_text = request.urlopen(request_url).read()
-        # TODO: decode('utf8')?
+        if allcaps:
+            request_url += 'allcaps/'
+        if prude:
+            request_url += 'prude/'
+        placeholder_text = request.urlopen(request_url).read().decode('utf8')
         return placeholder_text
 
