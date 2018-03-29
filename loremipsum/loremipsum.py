@@ -51,3 +51,21 @@ class LoremIpsum(object):
         placeholder_text = request.urlopen(request_url).read().decode('utf8')
         return placeholder_text
 
+    # Valid keys for html_kwargs
+    HTML_OPTIONS = [
+        'decorate', # Add bold, italic and marked text.
+        'link', # Add links.
+        'ul', # Add unordered lists.
+        'ol', # Add numbered lists.
+        'dl', # Add description lists.
+        'bq', # Add blockquotes.
+        'code', # Add code samples.
+        'headers', # Add headers.
+    ]
+
+    @staticmethod
+    def generate_html(paragraph_count=None, paragraph_length=None, allcaps=False, prude=False, **html_kwargs):
+        # TODO: document html_kwargs
+        # TODO: implement
+        pass
+
