@@ -18,9 +18,9 @@ class LoremIpsum(object):
     # TODO: make this method always be plaintext, add method for HTML with different params
     @staticmethod
     def generate(paragraph_count=None, paragraph_length=None, plaintext=True, allcaps=False, prude=False):
-        """Generate Lorem Ipsum placeholder text using the https://loremipsum.net API.
+        """Generate Lorem Ipsum placeholder text using the https://loripsum.net API.
 
-        Further documentation of parameters can be found at `loremipsum.net <https://loremipsum.net>`_
+        Further documentation of parameters can be found at `loripsum.net <https://loripsum.net>`_
 
         :param paragraph_count: (Optional) The number of paragraphs to generate. If
             unspecified, API defaults to 3
