@@ -1,0 +1,2 @@
+from .loremipsum import LoremIpsum
+
