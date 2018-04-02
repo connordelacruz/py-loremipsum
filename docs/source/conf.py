@@ -19,14 +19,17 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Lorem Ipsum API'
+# For automatic versioning
+from loremipsum.version import __version__
+
+project = 'Lorem Ipsum Generator'
 copyright = '2018, Connor de la Cruz'
 author = 'Connor de la Cruz'
 
 # The short X.Y version
-version = ''
+version = '{version[0]}.{version[1]}'.format(version=__version__.split('.'))
 # The full version, including alpha/beta/rc tags
-release = ''
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -40,6 +43,8 @@ release = ''
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
 ]
 
@@ -76,7 +81,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -99,11 +104,13 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 
+html_favicon = '_static/favicon.ico'
+
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'LoremIpsumAPIdoc'
+htmlhelp_basename = 'LoremIpsumGeneratordoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -130,7 +137,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'LoremIpsumAPI.tex', 'Lorem Ipsum API Documentation',
+    (master_doc, 'LoremIpsumGenerator.tex', 'Lorem Ipsum Generator Documentation',
      'Connor de la Cruz', 'manual'),
 ]
 
@@ -140,7 +147,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'loremipsumapi', 'Lorem Ipsum API Documentation',
+    (master_doc, 'loremipsumgenerator', 'Lorem Ipsum Generator Documentation',
      [author], 1)
 ]
 
@@ -151,10 +158,19 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'LoremIpsumAPI', 'Lorem Ipsum API Documentation',
-     author, 'LoremIpsumAPI', 'One line description of project.',
+    (master_doc, 'LoremIpsumGenerator', 'Lorem Ipsum Generator Documentation',
+     author, 'LoremIpsumGenerator', 'One line description of project.',
      'Miscellaneous'),
 ]
 
 
 # -- Extension configuration -------------------------------------------------
+
+# -- Options for intersphinx extension ---------------------------------------
+
+# Example configuration for intersphinx: refer to the Python standard library.
+intersphinx_mapping = {
+        'https://docs.python.org/': None,
+}
+
+
