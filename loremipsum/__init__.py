@@ -1,2 +1,2 @@
-from .loremipsum import LoremIpsum
+from .loremipsum import *
 
