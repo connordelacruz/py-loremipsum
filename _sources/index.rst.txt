@@ -5,7 +5,7 @@ Lorem Ipsum Generator Docs
    :maxdepth: 2
    :caption: Contents:
 
-   loremipsum.loremipsum
+   loremipsum
 
 
 

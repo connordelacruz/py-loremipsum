@@ -37,7 +37,10 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Lorem Ipsum Generator 0.1.0 documentation" href="index.html"/> 
+    <link rel="top" title="Lorem Ipsum Generator 0.1.0 documentation" href="index.html"/>
+        <link rel="up" title="loremipsum package" href="loremipsum.html"/>
+        <link rel="next" title="loremipsum.version module" href="loremipsum.version.html"/>
+        <link rel="prev" title="loremipsum package" href="loremipsum.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -90,11 +93,19 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">loremipsum.loremipsum module</a></li>
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="loremipsum.html">loremipsum package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="loremipsum.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">loremipsum.loremipsum module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="loremipsum.version.html">loremipsum.version module</a></li>
 </ul>
-</div>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="loremipsum.html#module-loremipsum">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
             
           
         </div>
@@ -137,6 +148,8 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
+          <li><a href="loremipsum.html">loremipsum package</a> &raquo;</li>
+        
       <li>loremipsum.loremipsum module</li>
     
     
@@ -159,45 +172,35 @@
   <div class="section" id="module-loremipsum.loremipsum">
 <span id="loremipsum-loremipsum-module"></span><h1>loremipsum.loremipsum module<a class="headerlink" href="#module-loremipsum.loremipsum" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="loremipsum.loremipsum.LoremIpsum">
-<em class="property">class </em><code class="descclassname">loremipsum.loremipsum.</code><code class="descname">LoremIpsum</code><a class="reference internal" href="_modules/loremipsum/loremipsum.html#LoremIpsum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#loremipsum.loremipsum.LoremIpsum" title="Permalink to this definition">¶</a></dt>
+<dt id="loremipsum.loremipsum.ParagraphLength">
+<em class="property">class </em><code class="descclassname">loremipsum.loremipsum.</code><code class="descname">ParagraphLength</code><a class="reference internal" href="_modules/loremipsum/loremipsum.html#ParagraphLength"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#loremipsum.loremipsum.ParagraphLength" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Class for generating “Lorem Ipsum” placeholder text</p>
+<p>Constants for the <code class="docutils literal notranslate"><span class="pre">paragraph_length</span></code> parameter in generate()</p>
 <dl class="attribute">
-<dt id="loremipsum.loremipsum.LoremIpsum.HTML_OPTIONS">
-<code class="descname">HTML_OPTIONS</code><em class="property"> = ['decorate', 'link', 'ul', 'ol', 'dl', 'bq', 'code', 'headers']</em><a class="headerlink" href="#loremipsum.loremipsum.LoremIpsum.HTML_OPTIONS" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="class">
-<dt id="loremipsum.loremipsum.LoremIpsum.ParagraphLength">
-<em class="property">class </em><code class="descname">ParagraphLength</code><a class="reference internal" href="_modules/loremipsum/loremipsum.html#LoremIpsum.ParagraphLength"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#loremipsum.loremipsum.LoremIpsum.ParagraphLength" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<p>Constants for the <code class="docutils literal notranslate"><span class="pre">paragraph_length</span></code> parameter in LoremIpsum.generate()</p>
-<dl class="attribute">
-<dt id="loremipsum.loremipsum.LoremIpsum.ParagraphLength.LONG">
-<code class="descname">LONG</code><em class="property"> = 'long'</em><a class="headerlink" href="#loremipsum.loremipsum.LoremIpsum.ParagraphLength.LONG" title="Permalink to this definition">¶</a></dt>
+<dt id="loremipsum.loremipsum.ParagraphLength.LONG">
+<code class="descname">LONG</code><em class="property"> = 'long'</em><a class="headerlink" href="#loremipsum.loremipsum.ParagraphLength.LONG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="loremipsum.loremipsum.LoremIpsum.ParagraphLength.MEDIUM">
-<code class="descname">MEDIUM</code><em class="property"> = 'medium'</em><a class="headerlink" href="#loremipsum.loremipsum.LoremIpsum.ParagraphLength.MEDIUM" title="Permalink to this definition">¶</a></dt>
+<dt id="loremipsum.loremipsum.ParagraphLength.MEDIUM">
+<code class="descname">MEDIUM</code><em class="property"> = 'medium'</em><a class="headerlink" href="#loremipsum.loremipsum.ParagraphLength.MEDIUM" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="loremipsum.loremipsum.LoremIpsum.ParagraphLength.SHORT">
-<code class="descname">SHORT</code><em class="property"> = 'short'</em><a class="headerlink" href="#loremipsum.loremipsum.LoremIpsum.ParagraphLength.SHORT" title="Permalink to this definition">¶</a></dt>
+<dt id="loremipsum.loremipsum.ParagraphLength.SHORT">
+<code class="descname">SHORT</code><em class="property"> = 'short'</em><a class="headerlink" href="#loremipsum.loremipsum.ParagraphLength.SHORT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
-<dt id="loremipsum.loremipsum.LoremIpsum.ParagraphLength.VERY_LONG">
-<code class="descname">VERY_LONG</code><em class="property"> = 'verylong'</em><a class="headerlink" href="#loremipsum.loremipsum.LoremIpsum.ParagraphLength.VERY_LONG" title="Permalink to this definition">¶</a></dt>
+<dt id="loremipsum.loremipsum.ParagraphLength.VERY_LONG">
+<code class="descname">VERY_LONG</code><em class="property"> = 'verylong'</em><a class="headerlink" href="#loremipsum.loremipsum.ParagraphLength.VERY_LONG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="staticmethod">
-<dt id="loremipsum.loremipsum.LoremIpsum.generate">
-<em class="property">static </em><code class="descname">generate</code><span class="sig-paren">(</span><em>paragraph_length=None</em>, <em>allcaps=False</em>, <em>prude=False</em>, <em>plaintext=True</em>, <em>html_options=None</em>, <em>trailing_newlines=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/loremipsum/loremipsum.html#LoremIpsum.generate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#loremipsum.loremipsum.LoremIpsum.generate" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="loremipsum.loremipsum.generate">
+<code class="descclassname">loremipsum.loremipsum.</code><code class="descname">generate</code><span class="sig-paren">(</span><em>paragraph_count=None</em>, <em>paragraph_length=None</em>, <em>allcaps=False</em>, <em>prude=False</em>, <em>plaintext=True</em>, <em>html_options=None</em>, <em>trailing_newlines=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/loremipsum/loremipsum.html#generate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#loremipsum.loremipsum.generate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate Lorem Ipsum placeholder text using the <a class="reference external" href="https://loripsum.net">https://loripsum.net</a> API.</p>
 <p>Further documentation of parameters can be found at <a class="reference external" href="https://loripsum.net">loripsum.net</a></p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -220,11 +223,11 @@ censored.”</li>
 <li><strong>plaintext</strong> – (Default = True) Return plain text, no HTML</li>
 <li><strong>html_options</strong> – <p>(Default = None) List of html options to specify in
 request. This will be ignored if plaintext = True. The following options
-are accepted:</p>
+are accepted</p>
 <blockquote>
 <div><ul>
 <li>’decorate’ - Add bold, italic and marked text.</li>
-<li>’link’ - Add links.</li>
+<li>’link’- Add links.</li>
 <li>’ul’ - Add unordered lists.</li>
 <li>’ol’ - Add numbered lists.</li>
 <li>’dl’ - Add description lists.</li>
@@ -246,8 +249,6 @@ in generated text. If True, leave trailing new lines in.</li>
 </table>
 </dd></dl>
 
-</dd></dl>
-
 </div>
 
 
@@ -257,6 +258,15 @@ in generated text. If True, leave trailing new lines in.</li>
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="loremipsum.version.html" class="btn btn-neutral float-right" title="loremipsum.version module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="loremipsum.html" class="btn btn-neutral" title="loremipsum package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
