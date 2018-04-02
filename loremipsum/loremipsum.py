@@ -5,6 +5,7 @@ from urllib.parse import urlencode
 URL = 'https://loripsum.net/api/'
 
 
+# TODO: this doesn't need to be a class, rework to just be a module
 class LoremIpsum(object):
     """Class for generating "Lorem Ipsum" placeholder text"""
 
