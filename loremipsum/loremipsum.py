@@ -41,7 +41,7 @@ class LoremIpsum(object):
         return placeholder_text
 
     @staticmethod
-    def generate(paragraph_count=None, paragraph_length=None, allcaps=False, prude=False, plaintext=True, html_options=None):
+    def generate(paragraph_count=None, paragraph_length=None, allcaps=False, prude=False, plaintext=True, html_options=None, trailing_newlines=False):
         """Generate Lorem Ipsum placeholder text using the https://loripsum.net API.
 
         Further documentation of parameters can be found at `loripsum.net <https://loripsum.net>`_
@@ -71,6 +71,10 @@ class LoremIpsum(object):
                 - 'bq' - Add blockquotes.
                 - 'code' - Add code samples.
                 - 'headers' - Add headers.
+        :param trailing_newlines: (Default = False) If False, strip trailing new lines
+            in generated text. If True, leave trailing new lines in.
+
+        :return: Result of querying loripsum.net API using the specified options
         """
         request_args = []
         if paragraph_count is not None:
@@ -91,5 +95,6 @@ class LoremIpsum(object):
             ]
             request_args.extend(valid_html_options)
         request_url = LoremIpsum._request_url_string(request_args)
-        return LoremIpsum._generate(request_url)
+        placeholder_text = LoremIpsum._generate(request_url)
+        return placeholder_text if trailing_newlines else placeholder_text.rstrip()
 
