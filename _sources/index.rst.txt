@@ -1,0 +1,17 @@
+Lorem Ipsum Generator Docs
+==========================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   loremipsum.loremipsum
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
