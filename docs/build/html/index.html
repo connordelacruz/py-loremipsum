@@ -93,6 +93,7 @@
               <!-- Local TOC -->
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Lorem Ipsum Generator Docs</a></li>
+<li><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
 <li><a class="reference internal" href="#module-loremipsum">loremipsum module</a></li>
 </ul>
 </div>
@@ -160,6 +161,22 @@
   <div class="section" id="lorem-ipsum-generator-docs">
 <h1>Lorem Ipsum Generator Docs<a class="headerlink" href="#lorem-ipsum-generator-docs" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="basic-usage">
+<h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">loremipsum</span>
+
+<span class="c1"># Generate 3 medium length paragraphs in plain text</span>
+<span class="n">plaintext</span> <span class="o">=</span> <span class="n">loremipsum</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">loremipsum</span><span class="o">.</span><span class="n">ParagraphLength</span><span class="o">.</span><span class="n">MEDIUM</span><span class="p">)</span>
+
+<span class="c1"># Generate 1 long paragraph with HTML tags</span>
+<span class="n">simple_html</span> <span class="o">=</span> <span class="n">loremipsum</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">loremipsum</span><span class="o">.</span><span class="n">ParagraphLength</span><span class="o">.</span><span class="n">LONG</span><span class="p">,</span> <span class="n">plaintext</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Generate 1 long paragraph with HTML headers and decorated text</span>
+<span class="n">options</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span> <span class="s1">&#39;decorate&#39;</span><span class="p">]</span>
+<span class="n">decorated_html</span> <span class="o">=</span> <span class="n">loremipsum</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">loremipsum</span><span class="o">.</span><span class="n">ParagraphLength</span><span class="o">.</span><span class="n">LONG</span><span class="p">,</span> <span class="n">plaintext</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">html_options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="module-loremipsum">
