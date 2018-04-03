@@ -1,9 +1,7 @@
-# TODO: move up to top level?
-
 from urllib import request, error
 
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 
 URL = 'https://loripsum.net/api/'
 
@@ -98,3 +96,4 @@ def generate(paragraph_count=None, paragraph_length=None, allcaps=False, prude=F
     request_url = _request_url_string(request_args)
     placeholder_text = _generate(request_url)
     return placeholder_text if trailing_newlines else placeholder_text.rstrip()
+

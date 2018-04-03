@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 # For automatic versioning
-from loremipsum.version import __version__
+from loremipsum import __version__
 
 project = 'Lorem Ipsum Generator'
 copyright = '2018, Connor de la Cruz'
