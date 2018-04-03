@@ -1,7 +1,7 @@
 from urllib import request, error
 
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 URL = 'https://loripsum.net/api/'
 
