@@ -1,4 +1,9 @@
+# TODO: move up to top level?
+
 from urllib import request, error
+
+
+__version__ = '0.1.0'
 
 URL = 'https://loripsum.net/api/'
 

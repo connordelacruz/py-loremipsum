@@ -1,7 +1,7 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 # Get __version__
-with open('./loremipsum/version.py') as f:
+with open('./loremipsum.py') as f:
     exec(f.read())
 
 setup(name='py-loremipsum',
@@ -12,6 +12,6 @@ setup(name='py-loremipsum',
       author='Connor de la Cruz',
       author_email='connor.c.delacruz@gmail.com',
       license='MIT',
-      packages=find_packages(),
+      py_modules=['loremipsum'],
       zip_safe=False)
 

@@ -1,2 +1,0 @@
-from .loremipsum import *
-
