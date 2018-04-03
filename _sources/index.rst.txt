@@ -4,6 +4,8 @@ Lorem Ipsum Generator Docs
 .. toctree::
    :hidden:
 
+.. include:: ../../README.rst
+    :end-before: .. readme-only
 
 loremipsum module
 =================
