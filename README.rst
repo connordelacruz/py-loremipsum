@@ -1,6 +1,22 @@
 Lorem Ipsum Generator
 =====================
 
+|pypi|
+|license|
+|github|
+
+.. |pypi| image:: https://img.shields.io/pypi/v/py-loremipsum.svg
+    :alt: PyPI
+    :target: https://pypi.python.org/pypi/randomuser
+
+.. |license| image:: https://img.shields.io/pypi/l/py-loremipsum.svg
+    :alt: PyPI - License
+
+.. |github| image:: https://img.shields.io/badge/GitHub--green.svg?style=social&logo=github
+    :alt: GitHub
+    :target: https://github.com/connordelacruz/py-loremipsum
+
+
 Python module for generating placeholder text using the `loripsum.net API <https://loripsum.net/>`__.
 
 Basic Usage
