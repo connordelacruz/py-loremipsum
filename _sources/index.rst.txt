@@ -5,4 +5,10 @@ Lorem Ipsum Generator Docs
    :hidden:
 
 
-.. include:: ./loremipsum.rst
+loremipsum module
+=================
+
+.. automodule:: loremipsum
+    :members:
+    :undoc-members:
+    :show-inheritance:
