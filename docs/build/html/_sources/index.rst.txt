@@ -1,14 +1,11 @@
 
 .. toctree::
-   :hidden:
+   :maxdepth: 2
+   :caption: Contents:
+
+   loremipsum
 
 .. include:: ../../README.rst
     :end-before: .. readme-only
 
-loremipsum module
-=================
 
-.. automodule:: loremipsum
-    :members:
-    :undoc-members:
-    :show-inheritance:
