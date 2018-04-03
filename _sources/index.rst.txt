@@ -2,16 +2,7 @@ Lorem Ipsum Generator Docs
 ==========================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   loremipsum
+   :hidden:
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. include:: ./loremipsum.rst

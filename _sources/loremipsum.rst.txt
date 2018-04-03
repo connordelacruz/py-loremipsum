@@ -1,16 +1,5 @@
-loremipsum package
-==================
-
-Submodules
-----------
-
-.. toctree::
-
-   loremipsum.loremipsum
-   loremipsum.version
-
-Module contents
----------------
+loremipsum module
+=================
 
 .. automodule:: loremipsum
     :members:
