@@ -1,3 +1,8 @@
+Lorem Ipsum Generator
+=====================
+
+Python module for generating placeholder text using the `loripsum.net API <https://loripsum.net/>`__.
+
 Basic Usage
 ===========
 

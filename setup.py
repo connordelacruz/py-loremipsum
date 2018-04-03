@@ -6,7 +6,7 @@ with open('./loremipsum.py') as f:
 
 setup(name='py-loremipsum',
       version=__version__,
-      description='Python class for generating placeholder text using https://loripsum.net/ API',
+      description='Python module for generating placeholder text using the https://loripsum.net/ API',
       url='https://github.com/connordelacruz/py-loremipsum/',
       download_url='https://github.com/connordelacruz/py-loremipsum/archive/{}.tar.gz'.format(__version__),
       author='Connor de la Cruz',

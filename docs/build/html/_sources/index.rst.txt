@@ -1,5 +1,3 @@
-Lorem Ipsum Generator Docs
-==========================
 
 .. toctree::
    :hidden:
