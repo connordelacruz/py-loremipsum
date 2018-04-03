@@ -7,7 +7,7 @@ Lorem Ipsum Generator
 
 .. |pypi| image:: https://img.shields.io/pypi/v/py-loremipsum.svg
     :alt: PyPI
-    :target: https://pypi.python.org/pypi/randomuser
+    :target: https://pypi.python.org/pypi/py-loremipsum
 
 .. |license| image:: https://img.shields.io/pypi/l/py-loremipsum.svg
     :alt: PyPI - License
