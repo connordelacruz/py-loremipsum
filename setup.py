@@ -40,11 +40,17 @@ setup(name='py-loremipsum',
       project_urls=project_urls,
       author='Connor de la Cruz',
       author_email='connor.c.delacruz@gmail.com',
+      license='MIT',
+      classifiers=[x for x in CLASSIFIERS.split("\n") if x],
       install_requires=[
           'pyperclip>=1.6.4,<1.7',
       ],
-      license='MIT',
-      classifiers=[x for x in CLASSIFIERS.split("\n") if x],
       py_modules=['loremipsum'],
+      entry_points = {
+          'console_scripts': [
+              'loremipsum = loremipsum:main',
+              'lorem-copy = loremipsum:copy',
+          ],
+      },
       zip_safe=False)
 

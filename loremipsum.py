@@ -1,3 +1,4 @@
+import argparse
 from urllib import request, error
 import pyperclip
 
@@ -8,12 +9,17 @@ __version__ = '1.0.3'
 URL = 'https://loripsum.net/api/'
 
 
-class ParagraphLength(object):
+class ParagraphLength():
     """Constants for the ``paragraph_length`` parameter in generate()"""
     SHORT = 'short'
     MEDIUM = 'medium'
     LONG = 'long'
     VERY_LONG = 'verylong'
+
+    @classmethod
+    def __options__(cls):
+        """Returns a list of class attributes that aren't prefixed with an underscore"""
+        return [i for i in cls.__dict__.keys() if i[:1] != '_']
 
 
 # Valid keys for html_options
@@ -100,11 +106,45 @@ def generate(paragraph_count=None, paragraph_length=None, allcaps=False, prude=F
     return placeholder_text if trailing_newlines else placeholder_text.rstrip()
 
 
+# Command Line Functions
+
+def _parser():
+    """Returns common ArgumentParser for command line functions"""
+    # TODO: add help, description, etc
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        'paragraph_count', type=int, nargs='?', default=1
+    )
+    # TODO: ensure this is working
+    parser.add_argument(
+        '-l', '--length', dest='paragraph_length', type=str.upper,
+        choices=ParagraphLength.__options__()
+    )
+    parser.add_argument(
+        '--allcaps', action='store_true', default=False
+    )
+    parser.add_argument(
+        '--prude', action='store_true', default=False
+    )
+    # TODO: take html options?
+    parser.add_argument(
+        '--html', dest='plaintext', action='store_false', default=True
+    )
+    parser.add_argument(
+        '--trailing-newlines', action='store_true', default=False
+    )
+    return parser
+
+
 def main():
-    # TODO: doc
-    # TODO: argparse
-    # TODO: auto copy to clipboard
-    pyperclip.copy(generate(1, ParagraphLength.SHORT))
+    """Prints generated text using parsed args"""
+    args = _parser().parse_args()
+    print(generate(**vars(args)))
+
+def copy():
+    """Copies generated text using parsed args to clipboard"""
+    args = _parser().parse_args()
+    pyperclip.copy(generate(**vars(args)))
     print('Copied to clipboard.')
 
 
