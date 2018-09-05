@@ -40,6 +40,7 @@ setup(name='py-loremipsum',
       project_urls=project_urls,
       author='Connor de la Cruz',
       author_email='connor.c.delacruz@gmail.com',
+      # install_requires=[], # TODO
       license='MIT',
       classifiers=[x for x in CLASSIFIERS.split("\n") if x],
       py_modules=['loremipsum'],
