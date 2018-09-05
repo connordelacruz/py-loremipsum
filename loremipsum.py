@@ -97,5 +97,15 @@ def generate(paragraph_count=None, paragraph_length=None, allcaps=False, prude=F
     placeholder_text = _generate(request_url)
     return placeholder_text if trailing_newlines else placeholder_text.rstrip()
 
-# TODO: main method that parses command line args and prints results of API query
+
+def main():
+    # TODO: doc
+    # TODO: argparse
+    # TODO: auto copy to clipboard
+    print(generate(1, ParagraphLength.SHORT))
+
+
+if __name__ == '__main__':
+    main()
+
 
