@@ -19,6 +19,12 @@ Lorem Ipsum Generator
 
 Python module for generating placeholder text using the `loripsum.net API <https://loripsum.net/>`__.
 
+TODO
+====
+
+- Update README after feature/main is implemented
+
+
 Basic Usage
 ===========
 

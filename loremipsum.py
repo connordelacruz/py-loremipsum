@@ -1,4 +1,5 @@
 from urllib import request, error
+import pyperclip
 
 
 # TODO: bump version
@@ -103,7 +104,8 @@ def main():
     # TODO: doc
     # TODO: argparse
     # TODO: auto copy to clipboard
-    print(generate(1, ParagraphLength.SHORT))
+    pyperclip.copy(generate(1, ParagraphLength.SHORT))
+    print('Copied to clipboard.')
 
 
 if __name__ == '__main__':
