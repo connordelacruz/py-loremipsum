@@ -168,6 +168,10 @@ texinfo_documents = [
 
 # -- Extension configuration -------------------------------------------------
 
+# -- Options for autodoc extension -------------------------------------------
+
+autodoc_member_order = 'bysource'
+
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
