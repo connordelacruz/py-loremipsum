@@ -7,15 +7,38 @@ URL = 'https://loripsum.net/api/'
 
 class ParagraphLength():
     """Constants for the ``paragraph_length`` parameter in generate()"""
-    SHORT = 'short'
-    MEDIUM = 'medium'
-    LONG = 'long'
-    VERY_LONG = 'verylong'
+
+    #: List of values for paragraph lengths. Used internally.
+    OPTIONS = [
+        'short',
+        'medium',
+        'long',
+        'verylong',
+    ]
+
+    SHORT = 0
+    MEDIUM = 1
+    LONG = 2
+    VERY_LONG = 3
 
     @classmethod
-    def __options__(cls):
-        """Returns a list of class attributes that aren't prefixed with an underscore"""
-        return [i for i in cls.__dict__.keys() if i[:1] != '_']
+    def get_option(cls, index):
+        """Returns the string value that corresponds to the constants declared
+        in this class. Used internally.
+
+        :param index: One of the constants declared in this class
+            (``SHORT``, ``MEDIUM``, ``LONG``, ``VERY_LONG``)
+
+        :return: The corresponding string value for the loripsum.net API or
+            None if the index is invalid
+        """
+        if isinstance(index, int) and index < len(cls.OPTIONS):
+            return cls.OPTIONS[index]
+        # Previous version of the class used strings instead of a list
+        elif isinstance(index, str) and index in cls.OPTIONS:
+            return index
+        else:
+            return None
 
 
 # Valid keys for html_options
@@ -52,8 +75,9 @@ def generate(paragraph_count=None, paragraph_length=None, allcaps=False, prude=F
     :param paragraph_count: (Optional) The number of paragraphs to generate. If
         unspecified, API defaults to 3
     :param paragraph_length: (Optional) The average length of a paragraph. Possible
-        values are declared as attributes in ``LoremIpsum.ParagraphLength``. If
-        unspecified, API defaults to 'long'
+        values are declared as attributes in ``LoremIpsum.ParagraphLength``
+        (``SHORT``, ``MEDIUM``, ``LONG``, ``VERY_LONG``). If unspecified, API
+        defaults to 'long'
     :param allcaps: (Default = False) Use ALL CAPS
     :param prude: (Default = False) Prude version. From the API documentation:
         "The original text contains a few instances of words like 'sex' or 'homo'.
@@ -80,6 +104,7 @@ def generate(paragraph_count=None, paragraph_length=None, allcaps=False, prude=F
     :return: Result of querying loripsum.net API using the specified options
     """
     request_args = []
+    paragraph_length = ParagraphLength.get_option(paragraph_length)
     if paragraph_count is not None:
         request_args.append(paragraph_count)
     if paragraph_length:
@@ -111,10 +136,9 @@ def _parser():
     parser.add_argument(
         'paragraph_count', type=int, nargs='?', default=1
     )
-    # TODO: ensure this is working
     parser.add_argument(
-        '-l', '--length', dest='paragraph_length', type=str.upper,
-        choices=ParagraphLength.__options__()
+        '-l', '--length', dest='paragraph_length', type=str.lower,
+        choices=ParagraphLength.OPTIONS
     )
     parser.add_argument(
         '--allcaps', action='store_true', default=False
