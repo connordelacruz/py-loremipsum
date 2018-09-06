@@ -4,9 +4,8 @@ def readme():
     with open('README.rst') as f:
         return f.read()
 
-# Get __version__
-with open('./loremipsum.py') as f:
-    exec(f.read())
+# TODO: bump version
+version = '1.0.3'
 
 # Metadata
 
@@ -24,7 +23,7 @@ Topic :: Utilities
 
 url = 'https://github.com/connordelacruz/py-loremipsum/'
 
-download_url = url + 'archive/{}.tar.gz'.format(__version__)
+download_url = url + 'archive/{}.tar.gz'.format(version)
 
 project_urls = {
     'Documentation': 'http://connordelacruz.com/py-loremipsum/',
@@ -32,7 +31,7 @@ project_urls = {
 }
 
 setup(name='py-loremipsum',
-      version=__version__,
+      version=version,
       description='Python module for generating placeholder text using the https://loripsum.net/ API',
       long_description=readme(),
       url=url,

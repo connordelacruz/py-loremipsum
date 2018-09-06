@@ -2,10 +2,6 @@ import argparse
 from urllib import request, error
 import pyperclip
 
-
-# TODO: bump version
-__version__ = '1.0.3'
-
 URL = 'https://loripsum.net/api/'
 
 
