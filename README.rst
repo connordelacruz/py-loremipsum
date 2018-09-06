@@ -1,3 +1,4 @@
+=====================
 Lorem Ipsum Generator
 =====================
 
@@ -43,6 +44,21 @@ Basic Usage
     decorated_html = loremipsum.generate(1, loremipsum.ParagraphLength.LONG, plaintext=False, html_options=options)
 
 
+Command Line
+============
+
+Basic
+-----
+
+.. todo: ``loremipsum`` command
+
+
+Copy to Clipboard
+-----------------
+
+.. todo: ``lorem-copy`` command
+
 .. readme-only
 
-For more details, see the `documentation <http://connordelacruz.com/py-loremipsum/>`__.
+For more details, see the `documentation <https://connordelacruz.com/py-loremipsum/>`__.
+

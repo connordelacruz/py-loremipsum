@@ -26,7 +26,7 @@ url = 'https://github.com/connordelacruz/py-loremipsum/'
 download_url = url + 'archive/{}.tar.gz'.format(version)
 
 project_urls = {
-    'Documentation': 'http://connordelacruz.com/py-loremipsum/',
+    'Documentation': 'https://connordelacruz.com/py-loremipsum/',
     'Source': url,
 }
 
