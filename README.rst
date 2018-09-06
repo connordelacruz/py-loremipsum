@@ -55,7 +55,23 @@ command line. For details on command line options:
 
     loremipsum --help
 
-.. todo: Practical examples (e.g. output to file)
+
+Example Usage
+~~~~~~~~~~~~~
+
+Generate 3 short paragraphs with trailing new lines and pipe output to
+``placeholder.txt``:
+
+::
+    
+    loremipsum 3 --length short --trailing-newlines > placeholder.txt
+
+
+Generate 4 HTML paragraphs and pipe output to ``placeholder.html``:
+
+::
+
+    loremipsum 4 --html > placeholder.html
 
 
 Copy to Clipboard
