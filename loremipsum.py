@@ -66,14 +66,15 @@ def _generate(request_url):
     return placeholder_text
 
 
-def generate(paragraph_count=None, paragraph_length=None, allcaps=False, prude=False, plaintext=True, html_options=None,
+def generate(paragraph_count=None, paragraph_length=None, allcaps=False,
+             prude=False, plaintext=True, html_options=None,
              trailing_newlines=False):
     """Generate Lorem Ipsum placeholder text using the https://loripsum.net API.
 
     Further documentation of parameters can be found at `loripsum.net <https://loripsum.net>`_
 
     :param paragraph_count: (Optional) The number of paragraphs to generate. If
-        unspecified, API defaults to 3
+        unspecified, API defaults to 4
     :param paragraph_length: (Optional) The average length of a paragraph. Possible
         values are declared as attributes in ``loremipsum.ParagraphLength``
         (``SHORT``, ``MEDIUM``, ``LONG``, ``VERY_LONG``). If unspecified, API

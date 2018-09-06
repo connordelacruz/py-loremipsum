@@ -20,11 +20,6 @@ Lorem Ipsum Generator
 
 Python module for generating placeholder text using the `loripsum.net API <https://loripsum.net/>`__.
 
-TODO
-====
-
-- Update README after feature/main is implemented
-
 
 Basic Usage
 ===========
@@ -32,6 +27,9 @@ Basic Usage
 .. code:: python
 
     import loremipsum
+
+    # Generate plain text paragraphs with API default settings
+    no_options = loremipsum.generate()
 
     # Generate 3 medium length paragraphs in plain text
     plaintext = loremipsum.generate(3, loremipsum.ParagraphLength.MEDIUM)
@@ -50,13 +48,33 @@ Command Line
 Basic
 -----
 
-.. todo: ``loremipsum`` command
+This package includes the ``loremipsum`` command to generate text from the
+command line. For details on command line options:
+
+::
+
+    loremipsum --help
+
+.. todo: Practical examples (e.g. output to file)
 
 
 Copy to Clipboard
 -----------------
 
-.. todo: ``lorem-copy`` command
+This package includes an additional ``lorem-copy`` command to generate text and
+copy it to the clipboard using `pyperclip
+<https://github.com/asweigart/pyperclip>`__. For details on command line
+options:
+
+::
+
+    lorem-copy --help
+
+**Note:** ``pyperclip`` should work out of the box on macOS and Windows, but may
+need some additional packages on Linux distros. Check `their documentation
+<https://pyperclip.readthedocs.io/en/latest/introduction.html>`__ first if
+you're having difficulty with the ``lorem-copy`` command.
+
 
 .. readme-only
 
