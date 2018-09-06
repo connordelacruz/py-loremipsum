@@ -41,7 +41,7 @@ class ParagraphLength():
             return None
 
 
-# Valid keys for html_options
+#: Valid keys for html_options
 HTML_OPTIONS = [
     'decorate',  # Add bold, italic and marked text.
     'link',  # Add links.
@@ -129,41 +129,50 @@ def generate(paragraph_count=None, paragraph_length=None, allcaps=False, prude=F
 
 # Command Line Functions
 
-def _parser():
+def _parser(description=None):
     """Returns common ArgumentParser for command line functions"""
-    # TODO: add help, description, etc
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        'paragraph_count', type=int, nargs='?', default=1
+    parser = argparse.ArgumentParser(
+        description=description,
+        epilog='For more information, visit <https://connordelacruz.com/py-loremipsum/>'
     )
     parser.add_argument(
-        '-l', '--length', dest='paragraph_length', type=str.lower,
-        choices=ParagraphLength.OPTIONS
+        'paragraph_count', type=int, nargs='?', default=1,
+        help='(Optional) The number of paragraphs to generate. If unspecified, API defaults to 3'
     )
     parser.add_argument(
-        '--allcaps', action='store_true', default=False
+        '-l', '--length', dest='paragraph_length', type=str.lower, choices=ParagraphLength.OPTIONS,
+        help='Specify the average length of a paragraph. API defaults to "long"'
     )
     parser.add_argument(
-        '--prude', action='store_true', default=False
-    )
-    # TODO: take html options?
-    parser.add_argument(
-        '--html', dest='plaintext', action='store_false', default=True
+        '--allcaps', action='store_true', default=False,
+        help='Use ALL CAPS'
     )
     parser.add_argument(
-        '--trailing-newlines', action='store_true', default=False
+        '--prude', action='store_true', default=False,
+        help='Omit Latin words that may be inappropriate in English'
+    )
+    # TODO: take html options? (using subparser?)
+    parser.add_argument(
+        '--html', dest='plaintext', action='store_false', default=True,
+        help='Generate HTML instead of plain text'
+    )
+    parser.add_argument(
+        '--trailing-newlines', action='store_true', default=False,
+        help='Keep trailing new lines'
     )
     return parser
 
 
 def main():
     """Prints generated text using parsed args"""
-    args = _parser().parse_args()
+    description = 'Generate "Lorem ipsum" text'
+    args = _parser(description).parse_args()
     print(generate(**vars(args)))
 
 def copy():
     """Copies generated text using parsed args to clipboard"""
-    args = _parser().parse_args()
+    description = 'Generate "Lorem ipsum" text and copy to clipboard'
+    args = _parser(description).parse_args()
     pyperclip.copy(generate(**vars(args)))
     print('Copied to clipboard.')
 
