@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Lorem Ipsum Generator &mdash; Lorem Ipsum Generator 1.0.2 documentation</title>
+  <title>Lorem Ipsum Generator &mdash; Lorem Ipsum Generator 1.1.0 documentation</title>
   
 
   
@@ -27,25 +27,18 @@
   
 
   
-  
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Lorem Ipsum Generator 1.0.2 documentation" href="#"/>
-        <link rel="next" title="loremipsum module" href="loremipsum.html"/> 
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="loremipsum module" href="loremipsum.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -67,7 +60,7 @@
             
             
               <div class="version">
-                1.0
+                1.1
               </div>
             
           
@@ -105,7 +98,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="#">Lorem Ipsum Generator</a>
@@ -113,9 +106,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -169,10 +163,12 @@
 <img alt="PyPI - License" src="https://img.shields.io/pypi/l/py-loremipsum.svg" />
 <a class="reference external" href="https://github.com/connordelacruz/py-loremipsum"><img alt="GitHub" src="https://img.shields.io/badge/GitHub--green.svg?style=social&amp;logo=github" /></a></p>
 <p>Python module for generating placeholder text using the <a class="reference external" href="https://loripsum.net/">loripsum.net API</a>.</p>
-</div>
 <div class="section" id="basic-usage">
-<h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
 <div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">loremipsum</span>
+
+<span class="c1"># Generate plain text paragraphs with API default settings</span>
+<span class="n">no_options</span> <span class="o">=</span> <span class="n">loremipsum</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span>
 
 <span class="c1"># Generate 3 medium length paragraphs in plain text</span>
 <span class="n">plaintext</span> <span class="o">=</span> <span class="n">loremipsum</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">loremipsum</span><span class="o">.</span><span class="n">ParagraphLength</span><span class="o">.</span><span class="n">MEDIUM</span><span class="p">)</span>
@@ -186,12 +182,46 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="command-line">
+<h2>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic">
+<h3>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h3>
+<p>This package includes the <code class="docutils literal notranslate"><span class="pre">loremipsum</span></code> command to generate text from the
+command line. For details on command line options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loremipsum</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<div class="section" id="example-usage">
+<h4>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h4>
+<p>Generate 3 short paragraphs with trailing new lines and pipe output to
+<code class="docutils literal notranslate"><span class="pre">placeholder.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loremipsum</span> <span class="mi">3</span> <span class="o">--</span><span class="n">length</span> <span class="n">short</span> <span class="o">--</span><span class="n">trailing</span><span class="o">-</span><span class="n">newlines</span> <span class="o">&gt;</span> <span class="n">placeholder</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Generate 4 HTML paragraphs and pipe output to <code class="docutils literal notranslate"><span class="pre">placeholder.html</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loremipsum</span> <span class="mi">4</span> <span class="o">--</span><span class="n">html</span> <span class="o">&gt;</span> <span class="n">placeholder</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="copy-to-clipboard">
+<h3>Copy to Clipboard<a class="headerlink" href="#copy-to-clipboard" title="Permalink to this headline">¶</a></h3>
+<p>This package includes an additional <code class="docutils literal notranslate"><span class="pre">lorem-copy</span></code> command to generate text and
+copy it to the clipboard using <a class="reference external" href="https://github.com/asweigart/pyperclip">pyperclip</a>. For details on command line
+options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lorem</span><span class="o">-</span><span class="n">copy</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">pyperclip</span></code> should work out of the box on macOS and Windows, but may
+need some additional packages on Linux distros. Check <a class="reference external" href="https://pyperclip.readthedocs.io/en/latest/introduction.html">their documentation</a> first if
+you’re having difficulty with the <code class="docutils literal notranslate"><span class="pre">lorem-copy</span></code> command.</p>
+</div>
+</div>
+</div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -211,7 +241,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -229,7 +259,8 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0.2',
+            VERSION:'1.1.0',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -247,14 +278,13 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
