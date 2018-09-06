@@ -4,9 +4,8 @@ def readme():
     with open('README.rst') as f:
         return f.read()
 
-# Get __version__
-with open('./loremipsum.py') as f:
-    exec(f.read())
+with open('VERSION') as version_file:
+    version = version_file.read().strip()
 
 # Metadata
 
@@ -24,15 +23,15 @@ Topic :: Utilities
 
 url = 'https://github.com/connordelacruz/py-loremipsum/'
 
-download_url = url + 'archive/{}.tar.gz'.format(__version__)
+download_url = url + 'archive/{}.tar.gz'.format(version)
 
 project_urls = {
-    'Documentation': 'http://connordelacruz.com/py-loremipsum/',
+    'Documentation': 'https://connordelacruz.com/py-loremipsum/',
     'Source': url,
 }
 
 setup(name='py-loremipsum',
-      version=__version__,
+      version=version,
       description='Python module for generating placeholder text using the https://loripsum.net/ API',
       long_description=readme(),
       url=url,
@@ -42,6 +41,15 @@ setup(name='py-loremipsum',
       author_email='connor.c.delacruz@gmail.com',
       license='MIT',
       classifiers=[x for x in CLASSIFIERS.split("\n") if x],
+      install_requires=[
+          'pyperclip>=1.6.4,<1.7',
+      ],
       py_modules=['loremipsum'],
+      entry_points = {
+          'console_scripts': [
+              'loremipsum = loremipsum:main',
+              'lorem-copy = loremipsum:copy',
+          ],
+      },
       zip_safe=False)
 
