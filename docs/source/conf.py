@@ -19,8 +19,10 @@
 
 # -- Project information -----------------------------------------------------
 
-# For automatic versioning
-from loremipsum import __version__
+import os
+
+with open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'VERSION')) as version_file:
+    __version__ = version_file.read().strip()
 
 project = 'Lorem Ipsum Generator'
 copyright = '2018, Connor de la Cruz'

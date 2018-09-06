@@ -4,8 +4,8 @@ def readme():
     with open('README.rst') as f:
         return f.read()
 
-# TODO: bump version
-version = '1.0.3'
+with open('VERSION') as version_file:
+    version = version_file.read().strip()
 
 # Metadata
 
