@@ -1,3 +1,11 @@
+=============================
+Warning! Deprecated (for now)
+=============================
+
+**The API that this tool relies on has been shut down, until I get a spare moment to find a new one to use, this is unfortunately unusable. Sorry!**
+
+----
+
 =====================
 Lorem Ipsum Generator
 =====================
